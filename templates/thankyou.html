@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Thank You!{% endblock %}
+
+{% block content %}
+<h1>THANK YOU!</h1>
+<h2>Your Responses: </h2>
+<ul>
+    {% for question, response in zipped %}
+    <li>
+        <b>{{question}}: </b> {{response[0]}} 
+        {% if response[1] %}
+        <i>{{response[1]}}</i>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
